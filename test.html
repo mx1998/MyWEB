@@ -6,7 +6,13 @@
 	<meta name=”viewport” content=”width=device-width, initial-scale=1″ />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<title>Document</title>
+	<script typet="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <script>
+	$(function () {
+			$(".like").click(function () {
+				$(this).toggleClass('cs');
+			})
+		})
 	(function (doc, win) {
 			var docEl = doc.documentElement,
 				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
@@ -130,6 +136,12 @@
 		height: 239px;
 		margin: 10px;
 	}
+
+	#x{
+		margin-top: 67px;
+	}
+	.like{ font-size:66px;  color:#ccc; cursor:pointer;}
+.cs{color:#f00;}
 	</style>
 </head>
 <body>
@@ -154,14 +166,17 @@
 </div>	
 
 <div id="xia">
-	<a href="#">世界上谁最帅</a><em>_百度图片</em>
-
+	<a href="#">这还用问吗?肯定是张淼鑫最帅</a>
+<p>_来自百度权威认证</p>
 	<img src="imgaes/zipai.jpg" alt="">
 </div>
-<div>这还用问吗?肯定是张淼鑫最帅</div>
-<div>
-	这个类似百度响应式网站如何?
+<div id="x">
+<div>认同的请点赞
+	<div class="like">&#10084;</div>
 </div>
+
+</div>
+
 
 </div>
 
