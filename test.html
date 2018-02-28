@@ -6,8 +6,13 @@
 	<meta name=”viewport” content=”width=device-width, initial-scale=1″ />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<title>Document</title>
-	<link rel="stylesheet" href="js/js.js">
+	<script typet="text/javascript" src="js/"jquery-3.3.1.min.js></script>
 <script>
+	$(function () {
+			$(".like").click(function () {
+				$(this).toggleClass('cs');
+			})
+		})
 	(function (doc, win) {
 			var docEl = doc.documentElement,
 				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
