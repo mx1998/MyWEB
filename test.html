@@ -14,19 +14,34 @@
 				$(this).toggleClass('cs');
 			})
 		})
-	(function (doc, win) {
-			var docEl = doc.documentElement,
-				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-				recalc = function () {
-					var clientWidth = docEl.clientWidth;
-					if (!clientWidth) return;
-					docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';    //其中“20”根据你设置的html的font-size属性值做适当的变化
-				};
+	$(document).ready(function(){
 
-			if (!doc.addEventListener) return;
-			win.addEventListener(resizeEvt, recalc, false);
-			doc.addEventListener('DOMContentLoaded', recalc, false);
-		})(document, window);
+$('a.zan').click(function(){
+
+var left = $(this).offset().left+10;
+var top = $(this).offset().top+10;
+
+var obj = $(this);
+
+$(this).append('<div id="zan">+1</div>');
+
+$('#zan').css({
+'position':'absolute',
+'top':top,
+'left':left,
+'color':'red'
+}).animate({
+'left':top+20,
+'top':top+20,
+},'slow',function(){
+$(this).remove();
+
+var sum =obj.find('span').text();
+sum++;
+
+obj.find('span').text(sum);})})
+
+})
 </script>
 	<style type="text/css">
 	
@@ -173,7 +188,9 @@
 </div>
 <div id="x">
 <div>认同的请点赞
-	<div class="like">&#10084;</div>
+	<div class="zan">&#10084;</div>
+	<a href='#' class="zan">&#10084(
+		<span>0</span>)</a>
 </div>
 
 </div>
